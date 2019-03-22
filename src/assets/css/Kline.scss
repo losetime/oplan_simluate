@@ -1,0 +1,139 @@
+// 继承样式
+.i-control-btn {
+  height: 35px;
+  display: flex;
+  justify-content: flex-start;
+}
+.i-control-item {
+  height: 25px;
+  line-height: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+  border: 1px solid #dcdfe6;
+  cursor: pointer;
+}
+.i-control-item2 {
+  height: 25px;
+  line-height: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+//----------------
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  color: var(--FtColor);
+}
+.t-control-wrap {
+  width: 100%;
+  height: 20%;
+  font-size: 12px;
+  .t-control-btn1 {
+    .left-control-wrap {
+      width: 100%;
+      display: flex;
+      .control-btn {
+        padding: 0px 10px;
+        margin-left: 10px;
+        color: #ffffff;
+        background: var(--activeColor);
+        @extend .i-control-item;
+      }
+    }
+    @extend .i-control-btn;
+    .control-item-date {
+      width: 62%;
+      height: 28px;
+      border: 1px solid #dcdfe6;
+      border-radius: 0;
+    }
+    .control-item-date:hover {
+      border: 1px solid var(--activeColor);
+    }
+    .right-control-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      .control-item {
+        margin-left: 15px;
+        font-size: 22px;
+        cursor: pointer;
+      }
+    }
+    .control-item:hover {
+      color: var(--activeColor);
+    }
+  }
+  .t-control-btn2 {
+    @extend .i-control-btn;
+    position: relative;
+    .control-item {
+      width: 150px;
+      font-size: 12px;
+      color: var(--FtColor);
+      @extend .i-control-item;
+      &:nth-child(2){
+        width: 180px;
+      }
+      &:nth-child(3){
+        width: 180px;
+      }
+    }
+    .control-item:hover {
+      background: var(--activeColor);
+      color: #ffffff;
+    }
+    .checked {
+      background: var(--activeColor);
+      color: #ffffff;
+    }
+    .menu1-wrap {
+      position: absolute;
+      top: 28px;
+      left: 8.4%;
+      z-index: 999;
+    }
+    .menu2-wrap {
+      position: absolute;
+      top: 28px;
+      left: 156px;
+      z-index: 999;
+    }
+    .slide-fade-enter-active,
+    .slide-fade-leave-active {
+      transition: all 0.3s;
+    }
+    .slide-fade-enter,
+    .slide-fade-leave-to {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    .right-control-wrap {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      .r-control-item {
+        padding: 0px 10px;
+        margin-left: 10px;
+        color: var(--FtColor);
+        @extend .i-control-item;
+      }
+    }
+  }
+  .b-control-btn3 {
+    @extend .i-control-btn;
+    .control-btn3-item {
+      @extend .i-control-item2;
+      margin-right: 20px;
+    }
+  }
+  .b-control-btn4 {
+    @extend .i-control-btn;
+    .control-btn4-item {
+      @extend .i-control-item2;
+      margin-right: 20px;
+    }
+  }
+}
