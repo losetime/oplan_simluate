@@ -1,0 +1,14 @@
+language: node_js
+node_js: stable
+branches:
+  only:
+  - master
+addons:
+  ssh_known_hosts:
+  - oplan.orait.cn
+install:
+- npm install
+script:
+- npm run build
+after_success:
+- rsync -az --delete ./dist/* travis@oplan.orait.cn:/var/www/mdzz-web/
